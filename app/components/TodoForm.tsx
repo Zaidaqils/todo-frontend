@@ -10,7 +10,8 @@ export default function TodoForm({ onAddTodo }: TodoFormProps) {
     // Local state utk controlled input form
     const [title, setTitle] =useState('');
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-
+        e.preventDefault();
+        
         //Validasi sederhana: jgn izinkan input kosong/hnya spasi
         const trimmedTitle = title.trim();
         if (!trimmedTitle) return;
@@ -31,7 +32,7 @@ export default function TodoForm({ onAddTodo }: TodoFormProps) {
                     onChange={(e) => setTitle(e.target.value)}
                     placeholder="Tambahkan tugas baru..."
                     className="flex-1 bg-white"
-                     variantSize="md"
+                    
                     />
                     <Button
                     type="submit"
